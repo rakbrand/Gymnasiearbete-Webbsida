@@ -1,0 +1,76 @@
+@charset "utf-8";
+.leftp{
+	float: left; 
+	width: 20%;
+	margin-bottom: auto;
+	text-align:left;
+	box-shadow: inset 10px 0px 0px #F90;
+	border-radius: 0%;
+	padding-left:10px;}
+.middlep{
+	display: inline-block; 
+	width: 20%;
+	margin-left: 20%;
+	margin-bottom: auto;
+	text-align:left;
+	box-shadow: inset 10px 0px 0px #F90;
+	border-radius: 0%;
+	padding-left:10px;
+	overflow:scroll;}
+.rightp{
+	float: left;
+	width: 20%;
+	margin-left: 20%;
+	margin-bottom: auto;
+	text-align:left;
+	box-shadow: inset 10px 0px 0px #F90;
+	border-radius: 0%;
+	padding-left: 10px;}
+.main{ -webkit-columns: 100px 3; margin:inherit}
+.title{text-align:center;}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color: #111;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.form{
+/* CSS Document */
+
