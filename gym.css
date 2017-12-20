@@ -50,7 +50,10 @@ li.dropdown {
 .dropdown:hover .dropdown-content {
     display: block;
 }
-.main{ -webkit-columns: 200px 3; margin:inherit;}
+.main{ 
+    columns: 200px 3;
+    margin:inherit;
+}
 .title{text-align:center;}
 .form{
 height: 600px;
