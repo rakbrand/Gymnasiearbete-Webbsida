@@ -50,14 +50,11 @@ li.dropdown {
 .dropdown:hover .dropdown-content {
     display: block;
 }
-.main{ 
-    columns: 200px 3;
-    margin:inherit;
-}
+.main{ columns: 200px 3; margin:inherit;}
 .title{text-align:center;}
 .form{
 height: 600px;
-width:500px;
+width:490px;
 border:1px solid #ccc;
 font:16px/26px Georgia, Garamond, Serif;overflow:auto;}
 .fav{ width:400px; margin-left: 100px;}
@@ -243,8 +240,5 @@ button {
         background:#399cb9;
     }
 }
-/* CSS Document */
-
-
-/* CSS Document */
-
+.img1{width:200%;
+height: 250%;}
