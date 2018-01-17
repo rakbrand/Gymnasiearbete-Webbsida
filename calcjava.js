@@ -1,30 +1,31 @@
 window.onload = function() {
 
-var current,
-    screen,
-    output,
-    limit,
-    zero,
-    period,
-    operator;
-    
-    screen = document.getElementById("result");
 
-var elem = document.querySelectorAll(".num");
+  var current,
+      screen,
+      output,
+      limit,
+      zero,
+      period,
+      operator;
+    
+      screen = document.getElementById("result");
+
+  var elem = document.querySelectorAll(".num");
     
       var len = elem.length;
     
-      for(var i = 0; i < len; i++ ) {
+      for (var i = 0; i < len; i++) {
         
         elem[i].addEventListener("click",function() {
                   
             num = this.value;
                      
-            output = screen.innerHTML +=num;
+            output = screen.innerHTML += num;
                   
             limit = output.length;
          
-         if(limit > 16 ) {
+         if (limit > 16 ) {
         
          alert("Sorry no more input is allowed");
              
@@ -114,6 +115,27 @@ var elem = document.querySelectorAll(".num");
            
     },false);
           
-      }   
+      }
+      try {
+
+        
+
+      var ul = document.getElementById("konstanter");
+
+      var antL = 80;
+
+      for (var i = 0; i<antL; i++) {
+        var li = document.createElement("LI");
+        
+        li.innerHTML = "Åsa";
+        ul.appendChild(li);
+      }
+      
+    }
+    catch(e){window.alert("Error: " + e)}
+      //window.alert("ajokdhsodf");
+
+
+      
 }
 // JavaScript Document

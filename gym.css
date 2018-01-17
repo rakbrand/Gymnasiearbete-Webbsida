@@ -9,7 +9,7 @@ ul {
 }
 
 li {
-    float: left;
+    /*float: left;*/
 }
 
 li a, .dropbtn {
@@ -68,7 +68,7 @@ font:16px/26px Georgia, Garamond, Serif;overflow:auto;}
     height:400px;
     background:gray;
     margin:50px auto;
-    -webkit-animation:bgChange 2s 2s alternate infinite;
+    /*-webkit-animation:bgChange 2s 2s alternate infinite;*/
     transition: all 2s ease;
 }
 
@@ -226,6 +226,24 @@ button {
     outline:none;
     box-shadow: inset 4px 4px 4px #1f7a29;
 }
+
+/*Listor*/
+
+/*.form{
+height: 600px;
+width:490px;
+border:1px solid #ccc;
+font:16px/26px Georgia, Garamond, Serif;overflow:auto;}*/
+.konstanter {
+
+    margin-left: 30%;
+    background-color: #2b9637;
+    height: 220px;
+    width: 200px;
+    font:16px/26px Georgia, Garamond, Serif;overflow:auto;
+
+}
+
 
 @-webkit-keyframes bgChange {
     0% {
