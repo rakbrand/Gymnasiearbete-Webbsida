@@ -1,141 +1,102 @@
 window.onload = function() {
 
+	/*Number buttons.*/
+	document.getElementById("b0").addEventListener("click", function() {
+		if (document.getElementById("txtArea").innerHTML == "0")
+			document.getElementById("txtArea").innerHTML = "";
 
-  var current,
-      screen,
-      output,
-      limit,
-      zero,
-      period,
-      operator;
-    
-      screen = document.getElementById("result");
+		document.getElementById("txtArea").innerHTML += "0";
+	});
+	document.getElementById("b1").addEventListener("click", function() {
+		if (document.getElementById("txtArea").innerHTML == "0")
+			document.getElementById("txtArea").innerHTML = "";
+		document.getElementById("txtArea").innerHTML += "1";
+	});
+	document.getElementById("b2").addEventListener("click", function() {
+		if (document.getElementById("txtArea").innerHTML == "0")
+			document.getElementById("txtArea").innerHTML = "";
+		document.getElementById("txtArea").innerHTML += "2";
+	});
+	document.getElementById("b3").addEventListener("click", function() {
+		if (document.getElementById("txtArea").innerHTML == "0")
+			document.getElementById("txtArea").innerHTML = "";
+		document.getElementById("txtArea").innerHTML += "3";
+	});
+	document.getElementById("b4").addEventListener("click", function() {
+		if (document.getElementById("txtArea").innerHTML == "0")
+			document.getElementById("txtArea").innerHTML = "";
+		document.getElementById("txtArea").innerHTML += "4";
+	});
+	document.getElementById("b5").addEventListener("click", function() {
+		if (document.getElementById("txtArea").innerHTML == "0")
+			document.getElementById("txtArea").innerHTML = "";
+		document.getElementById("txtArea").innerHTML += "5";
+	});
+	document.getElementById("b6").addEventListener("click", function() {
+		if (document.getElementById("txtArea").innerHTML == "0")
+			document.getElementById("txtArea").innerHTML = "";
+		document.getElementById("txtArea").innerHTML += "6";
+	});
+	document.getElementById("b7").addEventListener("click", function() {
+		if (document.getElementById("txtArea").innerHTML == "0")
+			document.getElementById("txtArea").innerHTML = "";
+		document.getElementById("txtArea").innerHTML += "7";
+	});
+	document.getElementById("b8").addEventListener("click", function() {
+		if (document.getElementById("txtArea").innerHTML == "0")
+			document.getElementById("txtArea").innerHTML = "";
+		document.getElementById("txtArea").innerHTML += "8";
+	});
+	document.getElementById("b9").addEventListener("click", function() {
+		if (document.getElementById("txtArea").innerHTML == "0")
+			document.getElementById("txtArea").innerHTML = "";
+		document.getElementById("txtArea").innerHTML += "9";
+	});
 
-  var elem = document.querySelectorAll(".num");
-    
-      var len = elem.length;
-    
-      for (var i = 0; i < len; i++) {
-        
-        elem[i].addEventListener("click",function() {
-                  
-            num = this.value;
-                     
-            output = screen.innerHTML += num;
-                  
-            limit = output.length;
-         
-         if (limit > 16 ) {
-        
-         alert("Sorry no more input is allowed");
-             
-       }
-       
-     },false);
-        
-    } 
+	/*Other stuff.*/
 
-    document.querySelector(".zero").addEventListener("click",function() {
-        
-        zero = this.value;
-        
-        if(screen.innerHTML === "") {
-            
-           output = screen.innerHTML = zero;  
-        }
-        
-        else if(screen.innerHTML === output) {
-            
-         output = screen.innerHTML +=zero;
-            
-        }
-          
-    },false);
-    
-    document.querySelector(".period").addEventListener("click",function() {
-        
-        period = this.value;
-        
-        if(screen.innerHTML === "") {
-            
-         output = screen.innerHTML = screen.innerHTML.concat("0.");
-            
-         }
-    
-        else if(screen.innerHTML === output) {
-        
-          screen.innerHTML = screen.innerHTML.concat(".");
-            
-        }
-        
-    },false);
-    
-    
-    document.querySelector("#eqn-bg").addEventListener("click",function() {
-        
-      if(screen.innerHTML === output) {
-          
-        screen.innerHTML = eval(output);
-      }
-        
-      else {
-            screen.innerHTML = "";
-      }
-          
-    },false);
-    
- document.querySelector("#delete").addEventListener("click",function() {
-        
-        screen.innerHTML = "";
-        
-    },false);
-    
-   
-     var elem1 = document.querySelectorAll(".operator");
-    
-      var len1 = elem1.length;
-    
-      for(var i = 0; i < len1; i++ ) {
-        
-        elem1[i].addEventListener("click",function() {
-         
-        operator = this.value;
-         
-         if(screen.innerHTML === "") {
-            
-            screen.innerHTML = screen.innerHTML.concat("");
-            
-        }
-        
-        else if(output) {
-        
-            screen.innerHTML = output.concat(operator);
-            
-        }
-           
-    },false);
-          
-      }
-      try {
+	document.getElementById("bResult").addEventListener("click", function() {
+		try {
+			document.getElementById("txtArea").innerHTML = eval(document.getElementById("txtArea").innerHTML.toString());
+			//window.alert(result);
+		}
+		catch (e) {
+			window.alert(e);
+			document.getElementById("txtArea").innerHTML = "0";
+		}
+	});
 
-        
+	document.getElementById("bDel").addEventListener("click", function() {
 
-      var ul = document.getElementById("konstanter");
+		if (document.getElementById("txtArea").innerHTML.length < 2 && parseInt(document.getElementById("txtArea").innerHTML) > 0)
+			document.getElementById("txtArea").innerHTML = "0";
+		//result = "";
+		if (document.getElementById("txtArea").innerHTML.length > 1) {
+			document.getElementById("txtArea").innerHTML = document.getElementById("txtArea").innerHTML.substring(0, document.getElementById("txtArea").innerHTML.length-1);
 
-      var antL = 80;
+		}
+	});
 
-      for (var i = 0; i<antL; i++) {
-        var li = document.createElement("LI");
-        
-        li.innerHTML = "Åsa";
-        ul.appendChild(li);
-      }
-      
-    }
-    catch(e){window.alert("Error: " + e)}
-      //window.alert("ajokdhsodf");
+	document.getElementById("bClr").addEventListener("click", function() {
 
+		document.getElementById("txtArea").innerHTML = "0";
+	});
 
-      
+	/*Operations.*/
+	document.getElementById("bAdd").addEventListener("click", function() {
+		document.getElementById("txtArea").innerHTML += "+";
+	});
+
+	document.getElementById("bRemo").addEventListener("click", function() {
+		document.getElementById("txtArea").innerHTML += "-";
+	});
+
+	document.getElementById("bMult").addEventListener("click", function() {
+		document.getElementById("txtArea").innerHTML += "*";
+	});
+
+	document.getElementById("bDiv").addEventListener("click", function() {
+		document.getElementById("txtArea").innerHTML += "/";
+	});
+
 }
-// JavaScript Document

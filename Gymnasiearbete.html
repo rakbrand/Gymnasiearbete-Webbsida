@@ -32,66 +32,53 @@
 </head>
 
 <body>
+<div class="main">
+<div class="calc">
+<div class="buttons">
+			<I class="txtArea" id="txtArea">0</I>
+			<div class="tecken">
+				<button type="button" id="bAdd">+</button>
+				<button type="button" id="bRemo">-</button>
+				<button type="button" id="bMult">*</button>
+				<button type="button" id="bDiv">/</button>
+			</div>
+			<div class="rows">
+				<div class="row1">
+					<button type="button" id="b7">7</button>
+					<button type="button" id="b8">8</button>
+					<button type="button" id="b9">9</button>
+				</div>
+				<div class="row2">
+					<button type="button" id="b4">4</button>
+					<button type="button" id="b5">5</button>
+					<button type="button" id="b6">6</button>
+				</div>
+				<div class="row3">
+					<button type="button" id="b1">1</button>
+					<button type="button" id="b2">2</button>
+					<button type="button" id="b3">3</button>
+				</div>
+			</div>
+			<button type="button" id="b0" class="b0">0</button>
 
-    
-    
-
-    <div class="main">
-    <div class="calc"><div id="background"><!-- Main background -->
-             
-        <div id="result"></div>
-             
-         <div id="main">
-             <div id="first-rows">
-              <button class="del-bg" id="delete">Del</button>
-                 <button value="%" class="btn-style operator opera-bg fall-back">%</button>
-                 <button value="+" class="btn-style opera-bg value align operator">+</button>
-           </div>
-                 
-               <div class="rows">
-             <button value="7" class="btn-style num-bg num first-child">7</button>
-                 <button value="8" class="btn-style num-bg num">8</button>
-                 <button value="9" class="btn-style num-bg num">9</button>
-                 <button value="-" class="btn-style opera-bg operator">-</button>
-           </div>
-                 
-                 <div class="rows">
-                 <button value="4" class="btn-style num-bg num first-child">4</button>
-                 <button value="5" class="btn-style num-bg num">5</button>
-                 <button value="6" class="btn-style num-bg num">6</button>
-                 <button value="*" class="btn-style opera-bg operator">x</button>
-                 </div>
-                 
-                 <div class="rows">
-                 <button value="1" class="btn-style num-bg num first-child">1</button>
-                 <button value="2" class="btn-style num-bg num">2</button>
-                 <button value="3" class="btn-style num-bg num">3</button>
-                 <button value="/" class="btn-style opera-bg operator">/</button>
-                 </div>
-                 
-                 <div class="rows">
-                 <button value="0" class="num-bg zero" id="delete">0</button>
-                 <button value="." class="btn-style num-bg period fall-back">.</button>
-                 <button value="=" id="eqn-bg" class="eqn align">=</button>
-                 </div>
-                
-        </div> 
-    </div>
+			<div class="operationer">
+				<button type="button" id="bResult">ENTER</button>
+				<button type="button" id="bDel">DEL</button>
+				<button type="button" id="bClr">CLEAR</button>
+			</div>
+		</div>
+  </div>
+<div class="form">
+<img class="img1" src="Formelblad_matematik_5.jpg" alt="form1" />
 </div>
-
-    <div class="form">
-        <img class="img1" src="Formelblad_matematik_5.jpg" alt="form1" />
-    </div>
-        <div class="list">
-            
-            <UL class="konstanter" id="konstanter">
-                
-
-            </UL>
-
-        </div>
-    </div>
-
+<div class="list">
+<ul id="n2">
+<li id="n1">h</li>
+<li id="n1">k</li>
+<li id="n1">l</li>
+</ul>
+</div>
+</div>
 
 </body>
 </html>
