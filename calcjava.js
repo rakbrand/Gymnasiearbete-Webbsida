@@ -139,3 +139,23 @@ window.onload = function() {
 	});
 
 }
+//try {
+
+		/*fs = require("fs");*/
+  
+  
+		/*var cmd = "window.alert('funkar det?')";
+		eval(cmd);*/
+		
+		/*var ul = document.getElementById("konstanter");
+  
+		var antL = 40;
+  
+		for (var i = 0; i<antL; i++) {
+		  var li = document.createElement("LI");
+		  
+		  li.innerHTML = "Konstanter";
+		  ul.appendChild(li);
+		}
+	  }
+	  catch(e){window.alert("Error {" + e + "}");}*/
