@@ -1,11 +1,12 @@
 @charset "utf-8";
+h1 { font-size:36px;}
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: #333;
-	margin-top: 100px;
+	margin-top: 20px;
 }
 
 li {
@@ -50,43 +51,45 @@ li.dropdown {
 .dropdown:hover .dropdown-content {
     display: block;
 }
-.main{ columns: 200px 3; margin:inherit;}
+.main{ width: 1500px; height:1000px; margin:inherit; background:#999; border-radius: 5px;}
 .title{text-align:center;}
 .form{
-height: 600px;
-width:490px;
+height: 800px;
+width:800px;
 border:1px solid #ccc;
-font:16px/26px Georgia, Garamond, Serif;overflow:auto;}
-.fav{ width:400px; margin-left: 100px;}
-
-/*body {
-  background:#777;
-}*/
-.img1{width:200%;
-height: 250%;}
-
+font:16px/26px Georgia, Garamond, Serif;overflow:auto;
+padding: 0 10px;
+padding-top: 10px;
+float: left;
+margin-left: 80px;
+}
+.fav{ width:100px; margin-left: 0px; float:right;}
+.calc{ width: 220px; height: 300px; float: left;}
+.img1{width:100%;
+height: 150%;}
 .buttons {
-	margin-left: 20px;
-	margin-top: 20px;
+	margin-left: 30px;
+	margin-top: 40px;
+	box-shadow: 0px 0px 0px 30px #000000;
+	background:#000;
+	border-radius: 5px;
 }
-.rows {
-	margin-top: 5px;
-}
+.rows {	margin-top: 5px;}
 .txtArea {
-	background: rgb(0, 0, 0);
+	background: #030;
+	box-shadow: 0px 0px 0px 10px #003300;
+	border-radius: 5px;
 	color: white;
+	margin-top: 10px;
+	
+}
+.b0 {margin-left: 33.5px; color:#000; background:#F00;}
+.b1 {color: #FFF; background:#00F; border-radius: 10px;}
+.bp{ color: #000; background: #F00;}
+.b2{ color:#000; background: #3C0; border-radius: 10px;}
 
-}
-.b0 {
-	margin-left: 33.5px;
-}
-.tecken {
-	margin-left: -15px;
-	/*margin-top: 10px;*/
-	/*margin-left: 10%;*/
-}
-.operationer {
+.tecken {margin-left: -15px;}
 
-}
-.calc{ width: 200px; height: 200px;}
-.calc{background-color: fff;}
+.operationer {}
+
+

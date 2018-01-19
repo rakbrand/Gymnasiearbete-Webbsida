@@ -52,9 +52,48 @@ window.onload = function() {
 			document.getElementById("txtArea").innerHTML = "";
 		document.getElementById("txtArea").innerHTML += "9";
 	});
-
+	document.getElementById("bp").addEventListener("click", function() {
+		/*if (document.getElementById("txtArea").innerHTML == "0")
+			document.getElementById("txtArea").innerHTML = "";*/
+		document.getElementById("txtArea").innerHTML += ".";
+	});
+	document.getElementById("bE").addEventListener("click", function() {
+		if (document.getElementById("txtArea").innerHTML == "0")
+			document.getElementById("txtArea").innerHTML = "1";
+		document.getElementById("txtArea").innerHTML += "e";
+	});
+	document.getElementById("bSin").addEventListener("click", function() {
+		if (document.getElementById("txtArea").innerHTML == "0")
+			document.getElementById("txtArea").innerHTML = "";
+		document.getElementById("txtArea").innerHTML += "Math.sin(";
+	});
+	document.getElementById("bCos").addEventListener("click", function() {
+		if (document.getElementById("txtArea").innerHTML == "0")
+			document.getElementById("txtArea").innerHTML = "";
+		document.getElementById("txtArea").innerHTML += "Math.cos(";
+	});
+	document.getElementById("bTan").addEventListener("click", function() {
+		if (document.getElementById("txtArea").innerHTML == "0")
+			document.getElementById("txtArea").innerHTML = "";
+		document.getElementById("txtArea").innerHTML += "Math.tan(";
+	});
+	
+	document.getElementById("bSqr").addEventListener("click", function() {
+		if (document.getElementById("txtArea").innerHTML == "0")
+			document.getElementById("txtArea").innerHTML = "";
+		document.getElementById("txtArea").innerHTML += "Math.sqrt(";
+	});
+	document.getElementById("bpv").addEventListener("click", function() {
+		if (document.getElementById("txtArea").innerHTML == "0")
+			document.getElementById("txtArea").innerHTML = "";
+		document.getElementById("txtArea").innerHTML += "(";
+	});
+	document.getElementById("bph").addEventListener("click", function() {
+		if (document.getElementById("txtArea").innerHTML == "0")
+			document.getElementById("txtArea").innerHTML = "";
+		document.getElementById("txtArea").innerHTML += ")";
+	});
 	/*Other stuff.*/
-
 	document.getElementById("bResult").addEventListener("click", function() {
 		try {
 			document.getElementById("txtArea").innerHTML = eval(document.getElementById("txtArea").innerHTML.toString());
