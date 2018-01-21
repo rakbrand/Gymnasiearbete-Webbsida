@@ -112,11 +112,22 @@ window.onload = function() {
 			result = document.getElementById("txtArea").innerHTML
 
 			if (result.includes("^")) {
-				var powerTo = powerOf(result);
-				// window.alert("\"" + result + "\"");
-				// window.alert("\"" + powerTo[0] + "\"");
-				// window.alert("\"" + powerTo[1] + "\"");
-				result = result.replace(powerTo[0].toString() + "^" + powerTo[1].toString(), "Math.pow(powerTo[0],powerTo[1])");
+
+				var powerAnt = FindSymbol(result,"^");
+				var pAnt = powerAnt;
+
+				for (var i = 0; i < pAnt.length; i++) {
+					var powerTo = PowerOf(result,powerAnt[0]);
+
+
+					//window.alert("\"" + powerTo[0] + "\"");
+					//window.alert("\"" + powerTo[1] + "\"");
+					//window.alert("\"" + result + "\"");
+					//window.alert(powerAnt[0]);
+					result = result.replace(powerTo[0].toString() + "^" + powerTo[1].toString(),Math.pow(powerTo[0], powerTo[1])); //"Math.pow(powerTo[0],powerTo[1])"
+					powerAnt = FindSymbol(result, "^");
+					//window.alert("\"" + result + "\"");
+				}
 			}
 
 			result = result.replace("Sin", "Math.sin");
@@ -201,16 +212,26 @@ window.onload = function() {
 	  catch(e){window.alert("Error {" + e + "}");}
 
 
-	  /*var poop = powerOf("123^56");
+	  /*for (var i = 0; i<'56+78'.length; i++) {
+		  window.alert('56+78'.charAt(i));
+	  }*/
+
+	  /*var poop = FindSymbol("5+5-6*4+4","+")
+	  for (var i = 0; i < poop.length; i++) {
+		  window.alert(poop[i]);
+	  }*/
+
+
+	  /*var poop = powerOf("5.0+123.0^56.0+6.0", '5.0+123.0^56.0+6.0'.indexOf("^"));
 	  window.alert(poop[0]);
 	  window.alert(poop[1]);*/
 	  //window.alert('hej'.includes('g'));
 
 }
 
-function powerOf(str) {
+function PowerOf(str,start) {
 
-	var pSymbol = str.indexOf("^"),
+	var pSymbol = start,
 	 	num1 = 0,
 		num2 = 0,
 		min = 0,
@@ -219,19 +240,32 @@ function powerOf(str) {
 
 
 	for (var i = pSymbol; i >= 0; i--) {
+		//window.alert(str.charAt(i));
+		if (str.charAt(i) == "+" || str.charAt(i) == "-" || str.charAt(i) == "*" || str.charAt(i) == "/") {
+			break;
+		}
 		if (parseInt(str.charAt(i)) === parseInt(str.charAt(i), 10) || str.charAt(i) == ".") {
 			cSymbol--;
 		}
+
+
 	}
 
 	num1 = str.substring(cSymbol,pSymbol);
+
 	min = cSymbol;
 	cSymbol = pSymbol;
-	pSymbol++;
 	cSymbol++;
+	pSymbol++;
 
-	for (var i = 0; i < pSymbol; i++)  {
-		if (parseInt(str.charAt(i)) === parseInt(str.charAt(i)) || str.charAt(i) == ".") {
+
+	for (var i = pSymbol; i < str.length; i++)  {
+		//window.alert(str);
+		//window.alert(str.charAt(i));
+		if (str.charAt(i) == "+" || str.charAt(i) == "-" || str.charAt(i) == "*" || str.charAt(i) == "/") {
+			break;
+		}
+		if (parseInt(str.charAt(i)) === parseInt(str.charAt(i), 10) || str.charAt(i) == ".") {
 			cSymbol++;
 		}
 	}
@@ -240,4 +274,17 @@ function powerOf(str) {
 	//window.alert(min);
 	//window.alert(max);
 	return [num1, num2];
+}
+
+function FindSymbol(str,symbol) {
+	var symbols = [];
+	for (var i = 0; i < str.length; i++) {
+		//window.alert(str.charAt(i));
+		if (str.charAt(i).toString() == symbol.toString()) {
+			symbols.push(i);
+		}
+	}
+	if (symbols.length < 0)
+		window.alert("N");
+	return symbols;
 }
