@@ -262,7 +262,7 @@ function PowerOf(str,start) {
 	for (var i = pSymbol; i < str.length; i++)  {
 		//window.alert(str);
 		//window.alert(str.charAt(i));
-		if (str.charAt(i) == "+" || str.charAt(i) == "-" || str.charAt(i) == "*" || str.charAt(i) == "/") {
+		if (str.charAt(i) == "+" || str.charAt(i) == "-" || str.charAt(i) == "*" || str.charAt(i) == "/" || str.charAt(i) == "^") {
 			break;
 		}
 		if (parseInt(str.charAt(i)) === parseInt(str.charAt(i), 10) || str.charAt(i) == ".") {
