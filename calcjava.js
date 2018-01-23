@@ -247,8 +247,6 @@ function PowerOf(str,start) {
 		if (parseInt(str.charAt(i)) === parseInt(str.charAt(i), 10) || str.charAt(i) == ".") {
 			cSymbol--;
 		}
-
-
 	}
 
 	num1 = str.substring(cSymbol,pSymbol);
@@ -262,10 +260,10 @@ function PowerOf(str,start) {
 	for (var i = pSymbol; i < str.length; i++)  {
 		//window.alert(str);
 		//window.alert(str.charAt(i));
-		if (str.charAt(i) == "+" || str.charAt(i) == "-" || str.charAt(i) == "*" || str.charAt(i) == "/" || str.charAt(i) == "^") {
+		if (str.charAt(i) == "+" || str.charAt(i) == "*" || str.charAt(i) == "/" || str.charAt(i) == "^") {
 			break;
 		}
-		if (parseInt(str.charAt(i)) === parseInt(str.charAt(i), 10) || str.charAt(i) == ".") {
+		if (parseInt(str.charAt(i)) === parseInt(str.charAt(i), 10) || str.charAt(i) == "." || str.charAt(i) == "-") {
 			cSymbol++;
 		}
 	}
