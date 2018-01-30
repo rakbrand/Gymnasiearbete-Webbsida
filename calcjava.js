@@ -138,11 +138,15 @@ window.onload = function() {
 
 			result = result.replace(")(", ")*(");
 
+			if (result.charAt(result.length-2) == "/" && result.charAt(result.length-1) == "0") {
+				window.alert("Fatal Error: Divided by Zero!");
+				
+			}
 
+			
 
-
-
-			result = eval(result.toString());
+			var geval = eval;
+			result = geval(result.toString());
 			document.getElementById("txtArea").innerHTML = result;
 			//window.alert(result);
 		}
