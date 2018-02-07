@@ -4,112 +4,112 @@ window.onload = function() {
 
 	/*Nummer knappar.*/
 	document.getElementById("b0").addEventListener("click", function() {
-		if (document.getElementById("txtArea").innerHTML == "0")
-			document.getElementById("txtArea").innerHTML = "";
+		if (document.getElementById("txtArea").value == "0")
+			document.getElementById("txtArea").value = "";
 
-		document.getElementById("txtArea").innerHTML += "0";
+		document.getElementById("txtArea").value += "0";
 	});
 	document.getElementById("b1").addEventListener("click", function() {
-		if (document.getElementById("txtArea").innerHTML == "0")
-			document.getElementById("txtArea").innerHTML = "";
-		document.getElementById("txtArea").innerHTML += "1";
+		if (document.getElementById("txtArea").value == "0")
+			document.getElementById("txtArea").value = "";
+		document.getElementById("txtArea").value += "1";
 	});
 	document.getElementById("b2").addEventListener("click", function() {
-		if (document.getElementById("txtArea").innerHTML == "0")
-			document.getElementById("txtArea").innerHTML = "";
-		document.getElementById("txtArea").innerHTML += "2";
+		if (document.getElementById("txtArea").value == "0")
+			document.getElementById("txtArea").value = "";
+		document.getElementById("txtArea").value += "2";
 	});
 	document.getElementById("b3").addEventListener("click", function() {
-		if (document.getElementById("txtArea").innerHTML == "0")
-			document.getElementById("txtArea").innerHTML = "";
-		document.getElementById("txtArea").innerHTML += "3";
+		if (document.getElementById("txtArea").value == "0")
+			document.getElementById("txtArea").value = "";
+		document.getElementById("txtArea").value += "3";
 	});
 	document.getElementById("b4").addEventListener("click", function() {
-		if (document.getElementById("txtArea").innerHTML == "0")
-			document.getElementById("txtArea").innerHTML = "";
-		document.getElementById("txtArea").innerHTML += "4";
+		if (document.getElementById("txtArea").value == "0")
+			document.getElementById("txtArea").value = "";
+		document.getElementById("txtArea").value += "4";
 	});
 	document.getElementById("b5").addEventListener("click", function() {
-		if (document.getElementById("txtArea").innerHTML == "0")
-			document.getElementById("txtArea").innerHTML = "";
-		document.getElementById("txtArea").innerHTML += "5";
+		if (document.getElementById("txtArea").value == "0")
+			document.getElementById("txtArea").value = "";
+		document.getElementById("txtArea").value += "5";
 	});
 	document.getElementById("b6").addEventListener("click", function() {
-		if (document.getElementById("txtArea").innerHTML == "0")
-			document.getElementById("txtArea").innerHTML = "";
-		document.getElementById("txtArea").innerHTML += "6";
+		if (document.getElementById("txtArea").value == "0")
+			document.getElementById("txtArea").value = "";
+		document.getElementById("txtArea").value += "6";
 	});
 	document.getElementById("b7").addEventListener("click", function() {
-		if (document.getElementById("txtArea").innerHTML == "0")
-			document.getElementById("txtArea").innerHTML = "";
-		document.getElementById("txtArea").innerHTML += "7";
+		if (document.getElementById("txtArea").value == "0")
+			document.getElementById("txtArea").value = "";
+		document.getElementById("txtArea").value += "7";
 	});
 	document.getElementById("b8").addEventListener("click", function() {
-		if (document.getElementById("txtArea").innerHTML == "0")
-			document.getElementById("txtArea").innerHTML = "";
-		document.getElementById("txtArea").innerHTML += "8";
+		if (document.getElementById("txtArea").value == "0")
+			document.getElementById("txtArea").value = "";
+		document.getElementById("txtArea").value += "8";
 	});
 	document.getElementById("b9").addEventListener("click", function() {
-		if (document.getElementById("txtArea").innerHTML == "0")
-			document.getElementById("txtArea").innerHTML = "";
-		document.getElementById("txtArea").innerHTML += "9";
+		if (document.getElementById("txtArea").value == "0")
+			document.getElementById("txtArea").value = "";
+		document.getElementById("txtArea").value += "9";
 	});
 	/*Nummer knappar.*/
 	/*Special tecken.*/
 	document.getElementById("bp").addEventListener("click", function() {
 		/*if (document.getElementById("txtArea").innerHTML == "0")
 			document.getElementById("txtArea").innerHTML = "";*/
-		if (!document.getElementById("txtArea").innerHTML.includes("."))
-			document.getElementById("txtArea").innerHTML += ".";
+		if (!document.getElementById("txtArea").value.includes("."))
+			document.getElementById("txtArea").value += ".";
 	});
 	document.getElementById("bE").addEventListener("click", function() {
-		if (document.getElementById("txtArea").innerHTML == "0")
-			document.getElementById("txtArea").innerHTML = "1";
-		document.getElementById("txtArea").innerHTML += "e";
+		if (document.getElementById("txtArea").value == "0")
+			document.getElementById("txtArea").value = "1";
+		document.getElementById("txtArea").value += "e";
 	});
 	document.getElementById("bSin").addEventListener("click", function() {
-		if (document.getElementById("txtArea").innerHTML == "0")
-			document.getElementById("txtArea").innerHTML = "";
-		document.getElementById("txtArea").innerHTML += "Sin(";
+		if (document.getElementById("txtArea").value == "0")
+			document.getElementById("txtArea").value = "";
+		document.getElementById("txtArea").value += "Sin(";
 	});
 	document.getElementById("bCos").addEventListener("click", function() {
-		if (document.getElementById("txtArea").innerHTML == "0")
-			document.getElementById("txtArea").innerHTML = "";
-		document.getElementById("txtArea").innerHTML += "Cos(";
+		if (document.getElementById("txtArea").value == "0")
+			document.getElementById("txtArea").value = "";
+		document.getElementById("txtArea").value += "Cos(";
 	});
 	document.getElementById("bTan").addEventListener("click", function() {
-		if (document.getElementById("txtArea").innerHTML == "0")
-			document.getElementById("txtArea").innerHTML = "";
-		document.getElementById("txtArea").innerHTML += "Tan(";
+		if (document.getElementById("txtArea").value == "0")
+			document.getElementById("txtArea").value = "";
+		document.getElementById("txtArea").value += "Tan(";
 	});
 	document.getElementById("bSqr").addEventListener("click", function() {
-		if (document.getElementById("txtArea").innerHTML == "0")
-			document.getElementById("txtArea").innerHTML = "";
-		document.getElementById("txtArea").innerHTML += "√(";
+		if (document.getElementById("txtArea").value == "0")
+			document.getElementById("txtArea").value = "";
+		document.getElementById("txtArea").value += "√(";
 	});
 	document.getElementById("bpv").addEventListener("click", function() {
-		if (document.getElementById("txtArea").innerHTML == "0")
-			document.getElementById("txtArea").innerHTML = "";
-		document.getElementById("txtArea").innerHTML += "(";
+		if (document.getElementById("txtArea").value == "0")
+			document.getElementById("txtArea").value = "";
+		document.getElementById("txtArea").value += "(";
 	});
 	document.getElementById("bph").addEventListener("click", function() {
-		if (document.getElementById("txtArea").innerHTML == "0")
-			document.getElementById("txtArea").innerHTML = "";
-		document.getElementById("txtArea").innerHTML += ")";
+		if (document.getElementById("txtArea").value == "0")
+			document.getElementById("txtArea").value = "";
+		document.getElementById("txtArea").value += ")";
 	});
 	document.getElementById("bPI").addEventListener("click", function () {
-		if (document.getElementById("txtArea").innerHTML == "0")
-			document.getElementById("txtArea").innerHTML = "";
-		document.getElementById("txtArea").innerHTML += "π";
+		if (document.getElementById("txtArea").value == "0")
+			document.getElementById("txtArea").value = "";
+		document.getElementById("txtArea").value += "π";
 	});
 	document.getElementById("bPO").addEventListener("click", function () {
-		document.getElementById("txtArea").innerHTML += "^";
+		document.getElementById("txtArea").value += "^";
 	});
 	/*Special tecken.*/
 	/*Andra grejer.*/
 	document.getElementById("bResult").addEventListener("click", function() {
 		try {
-			result = document.getElementById("txtArea").innerHTML
+			result = document.getElementById("txtArea").value
 
 			if (result.includes("^")) {
 
@@ -147,40 +147,40 @@ window.onload = function() {
 
 			var geval = eval;
 			result = geval(result.toString());
-			document.getElementById("txtArea").innerHTML = result;
+			document.getElementById("txtArea").value = result;
 			//window.alert(result);
 		}
 		catch (e) {
 			window.alert(e);
-			document.getElementById("txtArea").innerHTML = "0";
+			document.getElementById("txtArea").value = "0";
 			result = "0";
 		}
 	});
 	document.getElementById("bDel").addEventListener("click", function() {
-		if (document.getElementById("txtArea").innerHTML.length < 2 && parseInt(document.getElementById("txtArea").innerHTML) > 0)
-			document.getElementById("txtArea").innerHTML = "0";
-		if (document.getElementById("txtArea").innerHTML.length > 1)
-			document.getElementById("txtArea").innerHTML = document.getElementById("txtArea").innerHTML.substring(0, document.getElementById("txtArea").innerHTML.length-1);
+		if (document.getElementById("txtArea").value.length < 2 && parseInt(document.getElementById("txtArea").value) > 0)
+			document.getElementById("txtArea").value = "0";
+		if (document.getElementById("txtArea").value.length > 1)
+			document.getElementById("txtArea").value = document.getElementById("txtArea").innerHTML.substring(0, document.getElementById("txtArea").value.length-1);
 	});
 	document.getElementById("bClr").addEventListener("click", function() {
-		document.getElementById("txtArea").innerHTML = "0";
+		document.getElementById("txtArea").value = "0";
 	});
 	/*Andra grejer.*/
 	/*Operationer.*/
 	document.getElementById("bAdd").addEventListener("click", function() {
-		document.getElementById("txtArea").innerHTML += "+";
+		document.getElementById("txtArea").value += "+";
 	});
 
 	document.getElementById("bRemo").addEventListener("click", function() {
-		document.getElementById("txtArea").innerHTML += "-";
+		document.getElementById("txtArea").value += "-";
 	});
 
 	document.getElementById("bMult").addEventListener("click", function() {
-		document.getElementById("txtArea").innerHTML += "*";
+		document.getElementById("txtArea").value += "*";
 	});
 
 	document.getElementById("bDiv").addEventListener("click", function() {
-		document.getElementById("txtArea").innerHTML += "/";
+		document.getElementById("txtArea").value += "/";
 	});
 	/*Operationer.*/
 
