@@ -1,5 +1,7 @@
 var result = "";
 var degrees = true;
+//var konstanter = KONST;
+
 window.onload = function() {
 
 	/*Nummer knappar.*/
@@ -57,8 +59,8 @@ window.onload = function() {
 	/*Nummer knappar.*/
 	/*Special tecken.*/
 	document.getElementById("bp").addEventListener("click", function() {
-		/*if (document.getElementById("txtArea").innerHTML == "0")
-			document.getElementById("txtArea").innerHTML = "";*/
+		/*if (document.getElementById("txtArea").value == "0")
+			document.getElementById("txtArea").value = "";*/
 		if (!document.getElementById("txtArea").value.includes("."))
 			document.getElementById("txtArea").value += ".";
 	});
@@ -109,7 +111,9 @@ window.onload = function() {
 	/*Andra grejer.*/
 	document.getElementById("bResult").addEventListener("click", function() {
 		try {
-			result = document.getElementById("txtArea").value
+			result = document.getElementById("txtArea").value;
+			
+
 
 			if (result.includes("^")) {
 
@@ -130,11 +134,13 @@ window.onload = function() {
 				}
 			}
 
-			result = result.replace("Sin", "Math.sin");
-			result = result.replace("Cos", "Math.cos");
-			result = result.replace("Tan", "Math.tan");
-			result = result.replace("√", "Math.sqrt");
-			result = result.replace("π", "Math.PI");
+			result = result.replace("Sin", "sin");
+			result = result.replace("Cos", "cos");
+			result = result.replace("Tan", "tan");
+			result = result.replace("√", "sqrt");
+			result = result.replace("π", "PI");
+
+			//window.alert(result);
 
 			result = result.replace(")(", ")*(");
 
@@ -145,10 +151,16 @@ window.onload = function() {
 
 			
 
-			var geval = eval;
+			/*var geval = eval;
 			result = geval(result.toString());
 			document.getElementById("txtArea").value = result;
 			//window.alert(result);
+			*/
+
+
+			result = math.eval(result,KONST);
+			document.getElementById("txtArea").value = result;
+
 		}
 		catch (e) {
 			window.alert(e);
@@ -160,7 +172,7 @@ window.onload = function() {
 		if (document.getElementById("txtArea").value.length < 2 && parseInt(document.getElementById("txtArea").value) > 0)
 			document.getElementById("txtArea").value = "0";
 		if (document.getElementById("txtArea").value.length > 1)
-			document.getElementById("txtArea").value = document.getElementById("txtArea").innerHTML.substring(0, document.getElementById("txtArea").value.length-1);
+			document.getElementById("txtArea").value = document.getElementById("txtArea").value.substring(0, document.getElementById("txtArea").value.length-1);
 	});
 	document.getElementById("bClr").addEventListener("click", function() {
 		document.getElementById("txtArea").value = "0";
@@ -195,9 +207,9 @@ window.onload = function() {
 		var ul = document.getElementById("konstanter");
 		var antL = 40;
 
-		for (var i = 0; i<antL; i++) {
+		for (var i in KONST) {
 			var li = document.createElement("LI");
-		  	li.innerHTML = "Konstanter";
+		  	li.innerHTML = i + ": " + KONST[i];
 		  	ul.appendChild(li);
 		}
 
