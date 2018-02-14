@@ -51,8 +51,9 @@ li.dropdown {
 .dropdown:hover .dropdown-content {
     display: block;
 }
+.options{ margin-left: 10px;}
 .main { width: 1500px; height:1000px; margin:inherit; background:#999; border-radius: 5px;}
-.title {text-align:center;}
+.title { text-align: center; background-color: #CCC; height: 100px;}
 .form {
 height: 800px;
 width:800px;
@@ -94,12 +95,12 @@ margin-left: 100px;
 }
 .buttons {
 	margin-left: 30px;
-	margin-top: 40px;
+	margin-top: 50px;
 	box-shadow: 0px 0px 0px 30px #000000;
 	background:#000;
 	border-radius: 5px;
 }
-.rows {	margin-top: 5px;}
+.rows {	margin-top: 10px;}
 
 .txtArea {
 	background: #030;
@@ -109,12 +110,13 @@ margin-left: 100px;
 	margin-top: 10px;
 }
 .b0 {margin-left: 33.5px; color:#000; background:#F00;}
-.b1 {color: #FFF; background:#00F; border-radius: 10px;}
+.b1 {color: #FFF; background:#00F; }
 .bp{ color: #000; background: #F00;}
-.b2{ color:#000; background: #3C0; border-radius: 10px;}
+.b2{ color:#000; background: #3C0; }
 
-.tecken {margin-left: -15px;}
+.tecken {margin-left: -15px; margin-top: 10px;}
 
 .operationer {}
-
+.tiko{ background:#006; border-radius: 5px;}
+.tifo{ background:#006; border-radius: 5px;}
 
