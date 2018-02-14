@@ -67,7 +67,7 @@ window.onload = function() {
 	document.getElementById("bE").addEventListener("click", function() {
 		if (document.getElementById("txtArea").value == "0")
 			document.getElementById("txtArea").value = "1";
-		document.getElementById("txtArea").value += "e";
+		document.getElementById("txtArea").value += "ᴇ";
 	});
 	document.getElementById("bSin").addEventListener("click", function() {
 		if (document.getElementById("txtArea").value == "0")
@@ -109,11 +109,14 @@ window.onload = function() {
 	});
 	/*Special tecken.*/
 	/*Andra grejer.*/
+
+	
+
 	document.getElementById("bResult").addEventListener("click", function() {
 		try {
 			result = document.getElementById("txtArea").value;
 			
-
+			result = result.replace("ᴇ", "*10^");
 
 			if (result.includes("^")) {
 
@@ -128,7 +131,8 @@ window.onload = function() {
 					//window.alert("\"" + powerTo[1] + "\"");
 					//window.alert("\"" + result + "\"");
 					//window.alert(powerAnt[0]);
-					result = result.replace(powerTo[0].toString() + "^" + powerTo[1].toString(),Math.pow(powerTo[0], powerTo[1])); //"Math.pow(powerTo[0],powerTo[1])"
+					var t = "pow(" + powerTo[0] + "," + powerTo[1] + ")";
+					result = result.replace(powerTo[0].toString() + "^" + powerTo[1].toString(),math.pow(powerTo[0], powerTo[1])); //"Math.pow(powerTo[0],powerTo[1])"
 					powerAnt = FindSymbol(result, "^");
 					//window.alert("\"" + result + "\"");
 				}
@@ -139,13 +143,14 @@ window.onload = function() {
 			result = result.replace("Tan", "tan");
 			result = result.replace("√", "sqrt");
 			result = result.replace("π", "PI");
-
 			//window.alert(result);
 
-			result = result.replace(")(", ")*(");
+			//result = result.replace(")(", ")*(");
 
 			if (result.charAt(result.length-2) == "/" && result.charAt(result.length-1) == "0") {
 				window.alert("Fatal Error: Divided by Zero!");
+				//document.getElementById("txtArea").value = "ʇsǝɥ llǝus ǝ ƃɐɾ";
+				//result = "ʇsǝɥ llǝus ǝ ƃɐɾ";
 				
 			}
 
@@ -159,8 +164,8 @@ window.onload = function() {
 
 
 			result = math.eval(result,KONST);
+			result = result.toString().replace("e", "ᴇ");
 			document.getElementById("txtArea").value = result;
-
 		}
 		catch (e) {
 			window.alert(e);
@@ -260,7 +265,7 @@ function PowerOf(str,start) {
 		if (str.charAt(i) == "+" || str.charAt(i) == "-" || str.charAt(i) == "*" || str.charAt(i) == "/") {
 			break;
 		}
-		if (parseInt(str.charAt(i)) === parseInt(str.charAt(i), 10) || str.charAt(i) == ".") {
+		if (parseInt(str.charAt(i)) === parseInt(str.charAt(i), 10) || str.charAt(i) == "." || str.charAt(i) == "e") {
 			cSymbol--;
 		}
 	}
@@ -279,7 +284,7 @@ function PowerOf(str,start) {
 		if (str.charAt(i) == "+" || str.charAt(i) == "*" || str.charAt(i) == "/" || str.charAt(i) == "^") {
 			break;
 		}
-		if (parseInt(str.charAt(i)) === parseInt(str.charAt(i), 10) || str.charAt(i) == "." || str.charAt(i) == "-") {
+		if (parseInt(str.charAt(i)) === parseInt(str.charAt(i), 10) || str.charAt(i) == "." || str.charAt(i) == "-" || str.charAt(i) == "e") {
 			cSymbol++;
 		}
 	}
@@ -299,6 +304,7 @@ function FindSymbol(str,symbol) {
 		}
 	}
 	if (symbols.length < 0)
-		window.alert("N");
-	return symbols;
+		return null;
+	else
+		return symbols;
 }
