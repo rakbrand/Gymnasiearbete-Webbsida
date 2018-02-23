@@ -5,8 +5,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!--<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>-->
 <script src="http://cdnjs.cloudflare.com/ajax/libs/mathjs/3.20.2/math.min.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+<script src="listor.js" type="text/javascript"></script>
+<script src="KoFo.js" type="text/javascript"></script>
 <script src="calcjava.js" type="application/javascript"></script>
-<script src="konstanter.js" type="text/javascript"></script>
 <link href="gym.css" title="work" rel="stylesheet" />
 <title>Namnlöst dokument</title>
 <div class="title">
@@ -85,11 +87,13 @@
 	</div>
   </div>
 <div class="form">
-<img class="img1" src="formelblad/Formelblad_matematik_5.jpg" alt="form1" />
+<img class="img1" src="formelblad/Formelblad_matematik_5.jpg" alt="Bild ej funnen." onerror="this.onerror=null;this.src='food.gif';" />
 </div>
 <div class="fav">
-	<UL class="konstanter" id="konstanter"><div class="tiko">Konstanter</div></UL>
-	<UL class="formler" id="formler"><div class="tifo">Formler</div></UL>
+	<input type="text" id="searchFilterKonst" onkeyup="searchingKonst()" placeholder="Konstanter" title="Konstanter">
+	<UL class="konstanter" id="konstanter"></UL>
+	<input type="text" id="searchFilterForm" onkeyup="searchingForm()" placeholder="Formler" title="Formler">
+	<UL class="formler" id="formler"></UL>
 </div>
 </div>
 

@@ -3,6 +3,7 @@ var degrees = true;
 //var konstanter = KONST;
 
 window.onload = function() {
+	lists()
 
 	/*Nummer knappar.*/
 	document.getElementById("b0").addEventListener("click", function() {
@@ -138,7 +139,7 @@ window.onload = function() {
 				}
 			}
 
-			result = result.replace("Sin", "sin");
+			result = result.replace("Sin", "sin"); //result = result.replace("Sin", "asin");
 			result = result.replace("Cos", "cos");
 			result = result.replace("Tan", "tan");
 			result = result.replace("√", "sqrt");
@@ -165,6 +166,9 @@ window.onload = function() {
 
 			result = math.eval(result,KONST);
 			result = result.toString().replace("e", "ᴇ");
+			if (degrees) {
+				
+			}
 			document.getElementById("txtArea").value = result;
 		}
 		catch (e) {
@@ -201,36 +205,7 @@ window.onload = function() {
 	});
 	/*Operationer.*/
 
-	try {
-
-		/*fs = require("fs");*/
-
-
-		/*var cmd = "window.alert('funkar det?')";
-		eval(cmd);*/
-
-		var ul = document.getElementById("konstanter");
-		var antL = 40;
-
-		for (var i in KONST) {
-			var li = document.createElement("LI");
-		  	li.innerHTML = i + ": " + KONST[i];
-		  	ul.appendChild(li);
-		}
-
-		ul = document.getElementById("formler");
-		for (var i = 0; i<antL; i++) {
-			var li = document.createElement("LI");
-		  	li.innerHTML = "Formler";
-		  	ul.appendChild(li);
-		}
-
-	  }
-
-
-
-
-	  catch(e){window.alert("Error {" + e + "}");}
+	
 
 
 	  /*for (var i = 0; i<'56+78'.length; i++) {
