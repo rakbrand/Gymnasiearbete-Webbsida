@@ -1,4 +1,7 @@
 @charset "utf-8";
+
+
+
 h1 { font-size:36px;}
 .options {
     list-style-type: none;
@@ -64,13 +67,15 @@ margin-left: 100px;
 .konstanter {
 	
     margin-right: 60px;
-    background: #000;
+    background: rgb(22, 139, 148);
 	color:#FFF;
     height: 250px;
     width: 200px;
     font:16px/26px Georgia, Garamond, Serif;
 	overflow:auto;
-	float: right;
+    float: right;
+    border-style: double;
+    border-color: #FFF;
 	list-style-type: none;
 }
 
@@ -78,13 +83,15 @@ margin-left: 100px;
 	text-align:left;
     margin-right: 60px;
     margin-top: 2%;
-    background: #000;
+    background: rgb(22, 139, 148);
 	color:#FFF;
     height: 250px;
     width: 200px;
     font:16px/26px Georgia, Garamond, Serif;
 	overflow:auto;
-	float: right;
+    float: right;
+    border-style: double;
+    border-color: #FFF;
 	list-style-type: none;
 }
 
@@ -107,15 +114,17 @@ margin-left: 100px;
 	background: #030;
 	/*box-shadow: 0px 0px 0px 10px #003300;*/
 	color: white;
-	height: 40px;
+    height: 40px;
+    width: 170px;
 	border-style:none;
-	margin-top: 10px;
+    margin-top: 10px;
+    text-indent: 5px;
 }
 .b0 {margin-left: 33.5px; color:#000; background:#F00;}
 .bo {color: #000; background: #999; }
 .b1 {color: #FFF; background: #006; }
 .bp{ color: #000; background: #0C0;}
-.b2{ color:#000; background: #0C0; }
+.b2{ color:#000; background: #0C0; width: 55px;}
 
 .tecken {margin-left: 0px; margin-top: 10px;}
 
@@ -123,3 +132,52 @@ margin-left: 100px;
 .tiko{ background:#FFF; border-radius: 5px;}
 .tifo{ background:#FFF; border-radius: 5px;}
 
+
+/* The slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+.switch input {display:none;}
+
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+  
+input:checked + .slider {
+    background-color: rgb(17, 209, 65);
+}
+  
+input:focus + .slider {
+    box-shadow: 0 0 1px rgb(17, 209, 65);
+}
+  
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}

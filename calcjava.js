@@ -1,5 +1,6 @@
 var result = "";
 var degrees = true;
+var secnd = false;
 //var konstanter = KONST;
 
 window.onload = function() {
@@ -139,9 +140,15 @@ window.onload = function() {
 				}
 			}
 
-			result = result.replace("Sin", "sin"); //result = result.replace("Sin", "asin");
-			result = result.replace("Cos", "cos");
-			result = result.replace("Tan", "tan");
+			if (secnd) {
+				result = result.replace("Sin", "asin");
+				result = result.replace("Cos", "acos");
+				result = result.replace("Tan", "atan");
+			} else {
+				result = result.replace("Sin", "sin"); //result = result.replace("Sin", "asin");
+				result = result.replace("Cos", "cos");
+				result = result.replace("Tan", "tan");
+			}
 			result = result.replace("√", "sqrt");
 			result = result.replace("π", "PI");
 			//window.alert(result);

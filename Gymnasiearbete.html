@@ -43,11 +43,16 @@
 		<!--<div contenteditable="true" class="txtArea" id="txtArea">0</div>--> <!-- 52^3*(9+5)-9^5.2 -->
 		<!--<label class="txtArea" id="txtArea">0</label>-->
 		<input type="text" id="txtArea" class="txtArea"></input>
+		<label class="switch">
+			<input type="checkbox" id="slidBox" onchange="secnd=this.checked;if(this.checked)document.getElementById('bSin').innerHTML='Sin<sup>-1</sup>';else document.getElementById('bSin').innerHTML='Sin';
+			if(this.checked)document.getElementById('bCos').innerHTML='Cos<sup>-1</sup>';else document.getElementById('bCos').innerHTML='Cos';if(this.checked)document.getElementById('bTan').innerHTML='Tan<sup>-1</sup>';else document.getElementById('bTan').innerHTML='Tan';">
+			<span class="slider"></span>
+		</label>
 		<div class="tecken">
-			<button type="button" id="bAdd" class="b1">+</button>
-			<button type="button" id="bRemo" class="b1">-</button>
-			<button type="button" id="bMult" class="b1">x</button>
-			<button type="button" id="bDiv" class="b1">/</button>
+			<button type="button" id="bAdd" class="bo">+</button>
+			<button type="button" id="bRemo" class="bo">-</button>
+			<button type="button" id="bMult" class="bo">x</button>
+			<button type="button" id="bDiv" class="bo">/</button>
 		</div>
            <div class="tecken">
            <button type="button" id="bSin" class="b2">Sin</button>
