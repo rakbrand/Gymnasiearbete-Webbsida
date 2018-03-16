@@ -126,7 +126,14 @@ margin-left: 100px;
 .bp{ color: #000; background: #0C0;}
 .b2{ color:#000; background: #0C0; width: 55px;}
 
-.tecken {margin-left: 0px; margin-top: 10px;}
+.tecken {
+    margin-left: 0px; margin-top: 10px;
+}
+
+.tecken button {
+    text-align: left;
+    height: 25px;
+}
 
 .operationer {}
 .tiko{ background:#FFF; border-radius: 5px;}
@@ -137,8 +144,8 @@ margin-left: 100px;
 .switch {
     position: relative;
     display: inline-block;
-    width: 60px;
-    height: 34px;
+    width: 40px; /*-20*/
+    height: 24px; /*-10*/
   }
 .switch input {display:none;}
 
@@ -159,11 +166,11 @@ margin-left: 100px;
 
     position: absolute;
     content: "";
-    height: 26px;
-    width: 26px;
+    height: 16px;
+    width: 16px;
     left: 4px;
     bottom: 4px;
-    background-color: white;
+    background-color: rgb(141, 141, 141);
     -webkit-transition: .4s;
     transition: .4s;
 }
@@ -177,7 +184,7 @@ input:focus + .slider {
 }
   
 input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
+    -webkit-transform: translateX(16px);
+    -ms-transform: translateX(16px);
+    transform: translateX(16px);
 }
