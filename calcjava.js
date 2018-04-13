@@ -6,6 +6,14 @@ var secnd = false;
 window.onload = function() {
 	lists()
 
+	document.querySelector('#txtArea').addEventListener('keypress', function (e) {
+		var key = e.which || e.keyCode;
+		if (key === 13) { // 13 is enter
+			resultF();
+		}
+	});
+
+
 	/*Nummer knappar.*/
 	document.getElementById("b0").addEventListener("click", function() {
 		if (document.getElementById("txtArea").value == "0")
@@ -74,17 +82,26 @@ window.onload = function() {
 	document.getElementById("bSin").addEventListener("click", function() {
 		if (document.getElementById("txtArea").value == "0")
 			document.getElementById("txtArea").value = "";
-		document.getElementById("txtArea").value += "Sin(";
+		if (secnd)
+			document.getElementById("txtArea").value += "!Sin(";
+		else
+			document.getElementById("txtArea").value += "Sin(";
 	});
 	document.getElementById("bCos").addEventListener("click", function() {
 		if (document.getElementById("txtArea").value == "0")
 			document.getElementById("txtArea").value = "";
-		document.getElementById("txtArea").value += "Cos(";
+		if (secnd)
+			document.getElementById("txtArea").value += "!Cos(";
+		else
+			document.getElementById("txtArea").value += "Cos(";
 	});
 	document.getElementById("bTan").addEventListener("click", function() {
 		if (document.getElementById("txtArea").value == "0")
 			document.getElementById("txtArea").value = "";
-		document.getElementById("txtArea").value += "Tan(";
+		if (secnd)
+			document.getElementById("txtArea").value += "!Tan(";
+		else
+			document.getElementById("txtArea").value += "Tan(";
 	});
 	document.getElementById("bSqr").addEventListener("click", function() {
 		if (document.getElementById("txtArea").value == "0")
@@ -111,79 +128,14 @@ window.onload = function() {
 	});
 	/*Special tecken.*/
 	/*Andra grejer.*/
-
+	document.getElementById("clearHist").addEventListener("click", function () {
+		var ul = document.getElementById("historik");
+		while(ul.firstChild) ul.removeChild(ul.firstChild);
+	});
 	
 
-	document.getElementById("bResult").addEventListener("click", function() {
-		try {
-			result = document.getElementById("txtArea").value;
-			
-			result = result.replace("ᴇ", "*10^");
+	document.getElementById("bResult").addEventListener("click", resultF);
 
-			if (result.includes("^")) {
-
-				var powerAnt = FindSymbol(result,"^");
-				var pAnt = powerAnt;
-
-				for (var i = 0; i < pAnt.length; i++) {
-					var powerTo = PowerOf(result,powerAnt[0]);
-
-
-					//window.alert("\"" + powerTo[0] + "\"");
-					//window.alert("\"" + powerTo[1] + "\"");
-					//window.alert("\"" + result + "\"");
-					//window.alert(powerAnt[0]);
-					var t = "pow(" + powerTo[0] + "," + powerTo[1] + ")";
-					result = result.replace(powerTo[0].toString() + "^" + powerTo[1].toString(),math.pow(powerTo[0], powerTo[1])); //"Math.pow(powerTo[0],powerTo[1])"
-					powerAnt = FindSymbol(result, "^");
-					//window.alert("\"" + result + "\"");
-				}
-			}
-
-			if (secnd) {
-				result = result.replace("Sin", "asin");
-				result = result.replace("Cos", "acos");
-				result = result.replace("Tan", "atan");
-			} else {
-				result = result.replace("Sin", "sin"); //result = result.replace("Sin", "asin");
-				result = result.replace("Cos", "cos");
-				result = result.replace("Tan", "tan");
-			}
-			result = result.replace("√", "sqrt");
-			result = result.replace("π", "PI");
-			//window.alert(result);
-
-			//result = result.replace(")(", ")*(");
-
-			if (result.charAt(result.length-2) == "/" && result.charAt(result.length-1) == "0") {
-				window.alert("Fatal Error: Divided by Zero!");
-				//document.getElementById("txtArea").value = "ʇsǝɥ llǝus ǝ ƃɐɾ";
-				//result = "ʇsǝɥ llǝus ǝ ƃɐɾ";
-				
-			}
-
-			
-
-			/*var geval = eval;
-			result = geval(result.toString());
-			document.getElementById("txtArea").value = result;
-			//window.alert(result);
-			*/
-
-
-			result = math.eval(result,KONST);
-			result = result.toString().replace("e", "ᴇ");
-			if (degrees) {
-				
-			}
-			document.getElementById("txtArea").value = result;
-		}
-		catch (e) {
-			window.alert(e);
-			document.getElementById("txtArea").value = "0";
-			result = "0";
-		}
-	});
 	document.getElementById("bDel").addEventListener("click", function() {
 		if (document.getElementById("txtArea").value.length < 2 && parseInt(document.getElementById("txtArea").value) > 0)
 			document.getElementById("txtArea").value = "0";
@@ -230,6 +182,80 @@ window.onload = function() {
 	  window.alert(poop[1]);*/
 	  //window.alert('hej'.includes('g'));
 
+}
+
+function resultF() {
+	try {
+		result = document.getElementById("txtArea").value;
+		var form = result;
+		
+		result = result.replace("ᴇ", "*10^");
+
+		if (result.includes("^")) {
+
+			var powerAnt = FindSymbol(result,"^");
+			var pAnt = powerAnt;
+
+			for (var i = 0; i < pAnt.length; i++) {
+				var powerTo = PowerOf(result,powerAnt[0]);
+
+
+				//window.alert("\"" + powerTo[0] + "\"");
+				//window.alert("\"" + powerTo[1] + "\"");
+				//window.alert("\"" + result + "\"");
+				//window.alert(powerAnt[0]);
+				var t = "pow(" + powerTo[0] + "," + powerTo[1] + ")";
+				result = result.replace(powerTo[0].toString() + "^" + powerTo[1].toString(),math.pow(powerTo[0], powerTo[1])); //"Math.pow(powerTo[0],powerTo[1])"
+				powerAnt = FindSymbol(result, "^");
+				//window.alert("\"" + result + "\"");
+			}
+		}
+
+		var times = [
+			(result.match(/Sin/g) || []).length,
+			(result.match(/Cos/g) || []).length,
+			(result.match(/Tan/g) || []).length,
+			(result.match(/√/g) || []).length,
+			(result.match(/π/g) || []).length];
+		times.sort();
+		for (var t=0;t<times[times.length-1];t++) {
+			//window.alert("fd");
+			
+				result = result.replace("!Sin", "asin");
+				result = result.replace("!Cos", "acos");
+				result = result.replace("!Tan", "atan");
+			
+				result = result.replace("Sin", "sin"); //result = result.replace("Sin", "asin");
+				result = result.replace("Cos", "cos");
+				result = result.replace("Tan", "tan");
+			
+			result = result.replace("√", "sqrt");
+			result = result.replace("π", "(PI)");
+		}
+		
+		//window.alert(result);
+
+		//result = result.replace(")(", ")*(");
+
+		if (result.charAt(result.length-2) == "/" && result.charAt(result.length-1) == "0") {
+			window.alert("Fatal Error: Divided by Zero!");
+			//document.getElementById("txtArea").value = "ʇsǝɥ llǝus ǝ ƃɐɾ";
+			//result = "ʇsǝɥ llǝus ǝ ƃɐɾ";
+			
+		}
+		result = math.eval(result,KONST);
+		result = result.toString().replace("e", "ᴇ");
+		if (degrees) {
+			
+		}
+		document.getElementById("txtArea").value = result;
+		addHist(result,form);
+	}
+	catch (e) {
+		window.alert(e);
+		document.getElementById("txtArea").value = "0";
+		result = "0";
+	}
 }
 
 function PowerOf(str,start) {

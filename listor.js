@@ -8,7 +8,7 @@ function lists() {
             //t = t.replace('e','^');
             //t = t + 'fdfdf';
             //li.innerHTML = "<a>$$\b" +  i + " = " + t + "$$</a>";
-            li.setAttribute('dataKONST', i + ": " + KONST[i]);
+            li.setAttribute('data', i + ": " + KONST[i]);
 		  	li.innerHTML = "<a>$$\b" +  i + " = " + t + "$$</a>";
 		  	ul.appendChild(li);
 		}
@@ -20,13 +20,28 @@ function lists() {
 		for (var i in FORM) {
 			var li = document.createElement("LI");
               li.innerHTML = "<a>$$\b" + i + ": " + FORM[i] + "$$</a>";
-              li.setAttribute('dataFORM', i + ": " + FORM[i]);
-		  	ul.appendChild(li);
+              li.setAttribute('data', i + ": " + FORM[i]);
+              ul.appendChild(li);
 		}
 
 	  }
 	  catch(e){window.alert("Error {" + e + "}");}
 }
+
+function addHist(newValue,fromValue) {
+    //HIST.push(newValue);
+    var ul = document.getElementById("historik");
+    var li = document.createElement("LI");
+    li.setAttribute('data',fromValue  + " = " + newValue);
+    li.innerHTML = "<a>" + fromValue  + " = " + newValue + "</a>";
+    
+    
+
+    //HIST.unshift(newValue);
+    ul.prepend(li);
+}
+
+
 function searchingKonst() {
     var input, filter, ul, li, a, i;
     input = document.getElementById("searchFilterKonst");
@@ -35,7 +50,7 @@ function searchingKonst() {
     li = ul.getElementsByTagName("li");
     for (i = 0; i < li.length; i++) {
         //a = li[i].getElementsByTagName("a")[0];
-        a = li[i].getAttribute("dataKONST");
+        a = li[i].getAttribute("data");
         //console.log(a.innerHTML.toUpperCase().indexOf(filter));
         if (a.toUpperCase().indexOf(filter) > -1) { //if (a.innerHTML.toUpperCase().indexOf(filter) > -1)
             li[i].style.display = "";
@@ -54,7 +69,7 @@ function searchingForm() {
     li = ul.getElementsByTagName("li");
     for (i = 0; i < li.length; i++) {
         //a = li[i].getElementsByTagName("a")[0];
-        a = li[i].getAttribute("dataFORM");
+        a = li[i].getAttribute("data");
         //console.log(a.innerHTML.toUpperCase().indexOf(filter),a.innerHTML.toUpperCase());
         if (a.toUpperCase().indexOf(filter) > -1) { //if (a.innerHTML.toUpperCase().indexOf(filter) > -1)
             li[i].style.display = "";
